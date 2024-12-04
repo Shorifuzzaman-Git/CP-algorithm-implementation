@@ -17,11 +17,12 @@ vector<int> LpsArr(string pattern){
             i++;
         }
         else{
-            if(index!=0)index=lps[index-1];
-            else{
+            if(index==0){
                 lps[i]=index;
+                i++;
+            }else{
+                index=lps[index-1];
             }
-            i++;
         }
     }
     return lps;
@@ -38,8 +39,8 @@ void kmp(string text,string pattern){
             j++;
         }
         else{
-            if(j!=0)j=lps[j-1];
-            i++;
+            if(j==0) i++;
+            else j=lps[j-1];
         }
         if(j==pattern.size()){
             cout<<"Pattern found at index number : "<<(i-pattern.size())+1<<endl; //output one base index
