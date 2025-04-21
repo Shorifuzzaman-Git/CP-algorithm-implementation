@@ -1,3 +1,5 @@
+//time complexity is O( n log(n) + (n*max_deadline) )
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -15,7 +17,7 @@ int comparator(job a,job b){
 void func(job arr[],int n,int max_deadline){
     vector<int>solution(max_deadline+1,-1);
     int count=0,profitSum=0;
-    for(int i=0;i<n;i++){
+    for(int i=0;i<n;i++){  // complexity O(n*max_deadline)
         if(solution[arr[i].deadline]==-1){
             solution[arr[i].deadline]=arr[i].profite;
             profitSum+=arr[i].profite;
@@ -53,8 +55,9 @@ int main() {
 
     int max_deadline=*max_element(deadline.begin(),deadline.end());
 
-    sort(arr,arr+n,comparator);
-    func(arr,n,max_deadline);
+    sort(arr,arr+n,comparator); // complexity O(n log(n))
+    func(arr,n,max_deadline);   // complexity O(n*max_deadline)
+    // Final time complexity is O( n log(n) + (n*max_deadline) )
 }
 
 
