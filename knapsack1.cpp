@@ -1,4 +1,5 @@
 //AtCoder dp problem
+complexity O(n*w)
 
 #include <bits/stdc++.h>
 using namespace std;
