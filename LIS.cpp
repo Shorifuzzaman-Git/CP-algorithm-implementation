@@ -1,3 +1,5 @@
+//complexity O(n^2)
+
 #include <bits/stdc++.h>
 using namespace std;
 const int N=1e6+10;
@@ -10,10 +12,10 @@ ll lis(int n){
     int ans = 1;
     if (dp[n] != -1)return dp[n];
 
-    for (int i = 0; i < n; i++){
+    for (int i = 0; i < n; i++){ // run n times
         int x;
         if (arr[n] > arr[i]){
-            x=lis(i)+1;
+            x=lis(i)+1; // function call n times
             if(ans<x){
                 ans=x;
             }
