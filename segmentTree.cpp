@@ -52,8 +52,9 @@ void updat(int node,int begin,int end,int i,int newValue){
     int right=2*node+1;
     int mid=(begin+end)/2;
 
-    updat(left,begin,mid,i,newValue);
-    updat(right,mid+1,end,i,newValue);
+    if(i<=mid)update(left,b,mid,i,newvalue);
+    else update(right,mid+1,e,i,newvalue);
+
     tree[node]=tree[left]+tree[right];
 }
 
