@@ -9,7 +9,8 @@ using namespace std;
 ll arr[mx];
 struct info{
     ll prop, sum;
-} tree[mx * 3];
+};
+info tree[MAXN * 3];
 
 void makeTree(int node, int b, int e){
     if (b == e){
