@@ -1,3 +1,10 @@
+// Time complexity O(n)
+// Space complexity depends on the computer. Each node stores data and a pointer.
+//On a 32-bit system, an int takes 4 bytes and a pointer takes 4 bytes. A node takes a total of 8 bytes.
+//On a 64-bit system, an int takes 4 bytes and a pointer takes 8 bytes. A node takes a total of 12 bytes.
+
+// Learn Linked List from "Take you forward" on YouTube.
+
 #include<bits/stdc++.h>
 using namespace std;
 
